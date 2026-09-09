@@ -1,0 +1,34 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Logs
+*.log
+
+# Test coverage output
+cover.out
+*.coverprofile
+
+# Private dev docs (not committed)
+docs/dev/
+
+# AI settings
+.claude/
+.goda/
+.goco/
+.gode/
+
+# Temporary files
+tmp/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,61 @@
+linters:
+  enable:
+    # Correctness
+    - errcheck
+    - govet
+    - staticcheck
+    - typecheck
+    - unused
+
+    # Style & Idioms
+    - gofmt
+    - goimports
+    - revive
+    - misspell
+
+    # Bugs & Performance
+    - bodyclose
+    - nilerr
+    - copyloopvar
+    - gocritic
+
+    # Complexity
+    - cyclop
+    - gocognit
+
+linters-settings:
+  cyclop:
+    max-complexity: 15
+  gocognit:
+    min-complexity: 20
+  revive:
+    rules:
+      - name: exported
+        arguments: [checkPrivateReceivers]
+      - name: unused-parameter
+      - name: early-return
+      - name: superfluous-else
+  gocritic:
+    enabled-tags:
+      - diagnostic
+      - performance
+      - style
+    disabled-checks:
+      - whyNoLint
+      - hugeParam
+
+issues:
+  exclude-rules:
+    # Red-black tree internals may have higher complexity
+    - path: document/rbtree\.go
+      linters:
+        - cyclop
+        - gocognit
+    # Benchmarks don't need error checks
+    - path: _test\.go
+      linters:
+        - errcheck
+
+run:
+  timeout: 5m
+  tests: true
