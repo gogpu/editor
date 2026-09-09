@@ -31,13 +31,13 @@
 
 ### Status
 
-🚧 **Early development.** Architecture defined in ADR-028 (internal).
+🚧 **Early development.** Architecture defined in ADR-001 and ADR-002 (internal).
 
 ## Architecture
 
 ```
 gogpu/editor/
-├── document/     # PieceTable document model, undo/redo
+├── document/     # Piece Table + persistent B-tree, undo/redo, ChangeSet
 ├── layout/       # Text layout engine, line breaking, styled runs
 ├── view/         # Editor widget, gutter, cursor, selection, minimap
 ├── input/        # Keyboard, mouse, IME
