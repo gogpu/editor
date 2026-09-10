@@ -46,8 +46,8 @@ linters-settings:
 
 issues:
   exclude-rules:
-    # Red-black tree internals may have higher complexity
-    - path: document/rbtree\.go
+    # B-tree internals (split, merge, path copying) may have higher complexity
+    - path: document/btree\.go
       linters:
         - cyclop
         - gocognit
